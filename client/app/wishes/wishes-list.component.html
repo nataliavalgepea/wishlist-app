@@ -1,0 +1,10 @@
+<div>
+    <ul>
+        <li *ngFor="let wish of wishes | async">
+            {{wish.title}}
+            <p>{{wish.description}}</p>
+            <p>{{wish.price}}</p>
+            <button class="btn btn-danger" (click)="removeWish(wish)">Remove</button>
+        </li>
+    </ul>
+</div>

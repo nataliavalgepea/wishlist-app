@@ -14,8 +14,14 @@
   "exclude": [
     "node_modules"
   ],
-  "files": [
-    "typings.d.ts"
+  "include": [
+    "typings/browser.d.ts",
+    "typings/main.d.ts",
+    "typings/meteor.d.ts",
+    "typings/meteor_server.d.ts",
+    "client/**/*",
+    "server/**/*",
+    "both/**/*"
   ],
   "compileOnSave": false,
   "angularCompilerOptions": {

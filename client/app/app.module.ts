@@ -6,9 +6,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {WishesService} from "./wishes/wishes.service";
 import {WishesListComponent} from "./wishes/wishes-list.component";
 import { RouterModule } from '@angular/router';
-import {routes} from "./app.routes";
+import {routes, ROUTES_PROVIDERS} from "./app.routes";
 import {UserDetailsComponent} from "./users/user-details.component";
-import {UsersService} from "./users/users.service";
+import {AccountsModule} from "angular2-meteor-accounts-ui";
 
 @NgModule({
     imports: [
@@ -16,7 +16,8 @@ import {UsersService} from "./users/users.service";
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        AccountsModule
     ],
     exports: [],
     declarations: [
@@ -26,8 +27,8 @@ import {UsersService} from "./users/users.service";
         UserDetailsComponent
     ],
     providers: [
-        WishesService,
-        UsersService
+        ...ROUTES_PROVIDERS,
+        WishesService
     ],
     bootstrap: [AppComponent]
 })

@@ -1,3 +1,4 @@
+<button class="btn btn-default" [routerLink]="['']">Go back</button>
 <form [formGroup]="addWishForm" (ngSubmit)="addWish()">
     <div class="form-group">
         <label>Title</label>
@@ -15,4 +16,5 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Add</button>
+    <button class="btn btn-warning" [routerLink]="['']">Cancel</button>
 </form>

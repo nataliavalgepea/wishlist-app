@@ -24,6 +24,7 @@
     "both/**/*"
   ],
   "compileOnSave": false,
+  "buildOnSave": false,
   "angularCompilerOptions": {
     "genDir": "aot",
     "skipMetadataEmit": true

@@ -1,0 +1,30 @@
+<md-card>
+    <button md-raised-button color="warn" [routerLink]="['']">Go back</button>
+    <div class="form-container">
+    <div class="container-background">
+        <div class="form-content">
+            <div class="form-center">
+                <h1>Make a wish</h1>
+                <h2>Add it now!</h2>
+            </div>
+            <div class="form-center">
+                <form *ngIf="user" [formGroup]="addWishForm" (ngSubmit)="addWish()">
+                    <div style="display: table-row">
+                        <div class="form-inputs">
+                            <md-input dividerColor="accent" formControlName="title" placeholder="Make a wish"></md-input>
+                            <br/>
+                            <md-input dividerColor="accent" formControlName="description" placeholder="Tell a little bit about it"></md-input>
+                            <br/>
+                            <md-input dividerColor="accent" formControlName="price" placeholder="How much does it cost?"></md-input>
+                            <br/>
+                            <br/><br/>
+                            <button md-raised-button color="primary" md-raised-button type="submit">Make a wish!</button>
+                            <button md-raised-button color="warn" md-raised-button [routerLink]="['']" type="submit">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</md-card>

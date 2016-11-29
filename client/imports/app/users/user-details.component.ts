@@ -2,7 +2,7 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import template from './user-details.component.html';
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from 'rxjs/Subscription';
-import {User} from "../../../both/models/user.model";
+import {User} from "../../../../both/models/user.model";
 
 @Component({
     selector: 'user-details',

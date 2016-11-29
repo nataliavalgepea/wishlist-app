@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {WishesService} from "./wishes.service";
 import {Router} from "@angular/router";
 import {InjectUser} from "angular2-meteor-accounts-ui";
-import { Meteor } from 'meteor/meteor';
+import {Meteor} from 'meteor/meteor';
 
 @Component({
     selector: 'wishes-form',

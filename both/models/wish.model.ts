@@ -1,9 +1,10 @@
 import {CollectionObject} from "./collection-object.model";
+import {User} from "./user.model";
 
 export interface Wish extends CollectionObject {
     title: string;
     description?: string;
     price: number;
-    userId: string;
-    takenByUserId: string;
+    createdBy: any;
+    takenBy: any;
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import template from './wishes-list.component.html';
 import {Observable} from "rxjs";
-import {Wish} from "../../../both/models/wish.model";
+import {Wish} from "../../../../both/models/wish.model";
 import {WishesService} from "./wishes.service";
 import {InjectUser} from "angular2-meteor-accounts-ui";
 

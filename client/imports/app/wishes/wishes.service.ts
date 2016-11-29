@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Wish} from "../../../both/models/wish.model";
-import {Wishes} from "../../../both/collections/wishes.collection";
 import {Observable} from "rxjs";
 import {Meteor} from 'meteor/meteor';
+import {Wishes} from "../../../../both/collections/wishes.collection";
+import {Wish} from "../../../../both/models/wish.model";
 
 @Injectable()
 export class WishesService {
@@ -10,8 +10,7 @@ export class WishesService {
         if (!Meteor.userId())
             return;
 
-        value.userId = 'someId';
-        Wishes.insert(Object.assign({}, value, {userId: Meteor.userId()}));
+        Wishes.insert(Object.assign({}, value, {createdBy: Meteor.user()}));
     }
 
     removeWish(wish: Wish): void {
@@ -27,7 +26,7 @@ export class WishesService {
 
         Wishes.update(wish._id, {
             $set: {
-                takenByUserId: Meteor.userId()
+                takenBy: Meteor.user()
             }
         });
     }

@@ -7,9 +7,10 @@ import {WishesService} from "./wishes/wishes.service";
 import {WishesListComponent} from "./wishes/wishes-list.component";
 import {RouterModule} from '@angular/router';
 import {routes, ROUTES_PROVIDERS} from "./app.routes";
-import {UserDetailsComponent} from "./users/user-details.component";
 import {AccountsModule} from "angular2-meteor-accounts-ui";
 import {MaterialModule} from "@angular/material";
+import {LoginComponent} from "./auth/login.component";
+import {SignupComponent} from "./auth/signup.component";
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import {MaterialModule} from "@angular/material";
         AppComponent,
         WishesFormComponent,
         WishesListComponent,
-        UserDetailsComponent
+        LoginComponent,
+        SignupComponent
     ],
     providers: [
         ...ROUTES_PROVIDERS,

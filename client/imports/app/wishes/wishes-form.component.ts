@@ -13,10 +13,11 @@ import {Meteor} from 'meteor/meteor';
 @InjectUser('user')
 export class WishesFormComponent implements OnInit {
     addWishForm: FormGroup;
-    router: Router;
     user: Meteor.User;
 
-    constructor(private wishesService: WishesService, private formBuilder: FormBuilder) {
+    constructor(private wishesService: WishesService,
+                private formBuilder: FormBuilder,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -33,6 +34,8 @@ export class WishesFormComponent implements OnInit {
             this.wishesService.addWish(this.addWishForm.value);
 
             this.addWishForm.reset();
+
+            this.router.navigate(['/']);
         }
     }
 

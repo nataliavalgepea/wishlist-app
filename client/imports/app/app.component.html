@@ -1,6 +1,14 @@
 <md-toolbar color="primary">
     <a routerLink="/" class="toolbar-title">Wishlist app</a>
     <span class="fill-remaining-space"></span>
-    <login-buttons></login-buttons>
+    <div *ngIf="user">
+        <span style="padding-right: 10px;">Welcome, {{user.username}}!</span>
+        <button md-raised-button type="button" color="warn" (click)="logout()">Logout</button>
+    </div>
+    <div *ngIf="!user">
+        <button md-raised-button style="color: black" [routerLink]="['login']">Login</button>
+        <button md-raised-button color="accent" [routerLink]="['signup']">Sign up</button>
+    </div>
 </md-toolbar>
+
 <router-outlet></router-outlet>

@@ -4,23 +4,23 @@
         <button md-raised-button color="accent" [routerLink]="['/add']">Add a wish</button>
         <md-card class="card" *ngFor="let wish of wishes | async">
             <div class="card-item">
-                <h3 style="display: block" [routerLink]="['/user', wish.createdBy._id]">{{wish.createdBy.emails[0].address}}</h3>
+                <h3 style="display: block" [routerLink]="['/user', wish.createdBy._id]">{{wish.createdBy.username}}</h3>
                 <p>{{wish.title}}</p>
                 <p>{{wish.description}}</p>
                 <p>{{wish.price}}</p>
             </div>
-            <button md-raised-button color="primary" (click)="takeWish(wish)"
+            <button md-raised-button color="primary" type="button" (click)="takeWish(wish)"
                     *ngIf="user && wish.createdBy._id != user._id && wish.takenBy == null">
                 Take
             </button>
-            <button md-raised-button color="primary" *ngIf="wish.takenBy && wish.takenBy._id == user._id">
+            <button md-raised-button color="primary" type="button" *ngIf="wish.takenBy && wish.takenBy._id == user._id">
                 Taken by you
             </button>
-            <button md-raised-button color="primary"
+            <button md-raised-button color="primary" type="button"
                     *ngIf="user && wish.takenBy != null && wish.takenBy._id !== user._id">
-                Taken by {{wish.takenBy.emails[0].address}}
+                Taken by {{wish.takenBy.username}}
             </button>
-            <button md-raised-button color="warn" *ngIf="user && user._id == wish.createdBy._id"
+            <button md-raised-button type="button" color="warn" *ngIf="user && user._id == wish.createdBy._id"
                     (click)="removeWish(wish)">Remove
             </button>
         </md-card>
